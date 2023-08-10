@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	/* Initilizing with a string */
@@ -7,5 +11,5 @@ int main(void)
 
 	/* Writing a strinng to stdout */
 	puts(sen);
-	return 0;
+	return (0);
 }

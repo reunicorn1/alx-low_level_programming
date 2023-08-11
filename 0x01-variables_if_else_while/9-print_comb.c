@@ -12,13 +12,13 @@ int main(void)
 	/* Printing numbers */
 	for (n = 0; n < 10; n++)
 	{
+		putchar('0' + n);
 		if (n == 9)
-			putchar('0' + n);
+			putchar('\n');
 		else
 		{
-		putchar('0' + n);
-		putchar(',');
-		putchar(' ');
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	return (0);

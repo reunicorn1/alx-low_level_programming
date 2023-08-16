@@ -19,5 +19,6 @@ int main(void)
 		arr[i + 2] = arr[i] + arr[i + 1];
 		printf(", %ld", arr[i + 2]);
 	}
+	printf("\n");
 	return (0);
 }

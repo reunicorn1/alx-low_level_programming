@@ -19,4 +19,5 @@ int main(void)
 		y = z;
 	}
 	printf("\n");
+	return (0);
 }

@@ -10,6 +10,7 @@ int main(void)
 	int i;
 
 	long int arr[50];
+
 	arr[0] = 1;
 	arr[1] = 2;
 	printf("1, 2");
@@ -18,5 +19,5 @@ int main(void)
 		arr[i + 2] = arr[i] + arr[i + 1];
 		printf(", %ld", arr[i + 2]);
 	}
-
+	return (0);
 }

@@ -14,6 +14,12 @@ void print_number(int n)
 
 	i = 10;
 	j = 1;
+	/* handling the negative values */
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
 	if (n < 100000000)
 	{
 		/* to find the number of digits of n */
@@ -21,12 +27,6 @@ void print_number(int n)
 		{
 			j++;
 			i = i * 10;
-		}
-		/* handling negative values */
-		if (n < 0)
-		{
-			_putchar('-');
-			n = -(n);
 		}
 		/* printing process of n */
 		for (q = 1; q <= j; q++)

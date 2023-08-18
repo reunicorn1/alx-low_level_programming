@@ -11,7 +11,7 @@
 void print_number(int n)
 {
 	int j, q, r;
-	long i, pwr;
+	unsigned long i, pwr;
 
 	/* to find the number of digits of n */
 	i = 10;

@@ -13,6 +13,7 @@ int main(void)
 	int i = 1;
 	int j;
 	int prime[10];
+
 	prime[0] = 1;
 
 	while (n % 2 == 0)

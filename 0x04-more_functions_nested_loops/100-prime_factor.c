@@ -35,4 +35,5 @@ int main(void)
 		prime[i] = n;
 	}
 	printf("%d\n", prime[i]);
+	return (0);
 }

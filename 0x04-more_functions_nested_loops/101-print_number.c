@@ -10,7 +10,8 @@
 
 void print_number(int n)
 {
-	int i, j, q, r, pwr;
+	int j, q, r;
+	long i, pwr;
 
 	/* to find the number of digits of n */
 	i = 10;

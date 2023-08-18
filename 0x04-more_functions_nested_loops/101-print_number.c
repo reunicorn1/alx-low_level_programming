@@ -24,7 +24,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n = -(n);
 	}
 	/* printing process of n */
 	for (q = 1; q <= j; q++)

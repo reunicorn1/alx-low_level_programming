@@ -18,6 +18,6 @@ void print_array(int *a, int n)
 		printf("%d", *a);
 		for (i = 1; i < n; i++)
 			printf(", %d", *(a + i));
-		printf("\n");
 	}
+	printf("\n");
 }

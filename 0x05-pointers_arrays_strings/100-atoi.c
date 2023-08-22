@@ -10,7 +10,7 @@
 
 int _atoi(char *s)
 {
-	int i, j, n, p, result;
+	unsigned int i, j, n, p, result;
 
 	i = 0;
 	result = 0;
@@ -33,7 +33,7 @@ int _atoi(char *s)
 		if (!(s[j] > 47 && s[j] < 58) && result > 0)
 			break;
 	}
-	if (n > p)
+	if (n > p || p > n)
 		result = -result;
 	if (result == 0)
 		return (0);

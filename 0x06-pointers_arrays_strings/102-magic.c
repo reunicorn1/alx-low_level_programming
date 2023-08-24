@@ -3,7 +3,6 @@
 int main(void)
 {
   int n;
-  int m;
   int a[5];
   int *p;
 

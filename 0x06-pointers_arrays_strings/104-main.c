@@ -12,6 +12,6 @@ int main(void)
 
     printf("%s\n", buffer);
     printf("---------------------------------\n");
-    print_buffer(buffer, sizeof(buffer));
+    print_buffer(buffer, 0);
     return (0);
 }

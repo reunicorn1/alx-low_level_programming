@@ -14,9 +14,9 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
-	for (j = 0; j < size; j = 10 + j)
+	if (size > 0)
 	{
-		if (size > 0)
+		for (j = 0; j < size; j = 10 + j)
 		{
 			printf("%08x: ", j);
 			for (i = j; i < j + 10; i++)
@@ -43,8 +43,9 @@ void print_buffer(char *b, int size)
 						putchar(b[i]);
 				}
 			}
-
+			printf("\n");
 		}
-		printf("\n");
 	}
+	else
+		printf("\n");
 }

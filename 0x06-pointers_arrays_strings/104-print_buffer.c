@@ -25,7 +25,7 @@ void print_buffer(char *b, int size)
 					printf(" ");
 				if (i < size)
 				{
-					if (b[i] < 15)
+					if (b[i] < 32)
 						printf("%d", 0);
 					printf("%x", b[i]);
 				}
@@ -37,7 +37,7 @@ void print_buffer(char *b, int size)
 			{
 				if (i < size)
 				{
-					if (b[i] < 15)
+					if (b[i] < 32)
 						printf(".");
 					else
 						putchar(b[i]);

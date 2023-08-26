@@ -10,10 +10,21 @@
 
 char *rot13(char *src)
 {
-	int i;
+	int i, j;
 
-	int u1[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
-	int u2[] = {'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-	int l1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'};
-	int l2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char code[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; src[i] != 0; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (src[i] == data[j])
+			{
+				src[i] = code[j];
+				break;
+			}
+		}
+	}
+	return (src);
 }

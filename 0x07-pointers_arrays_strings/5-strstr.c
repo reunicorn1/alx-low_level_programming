@@ -25,10 +25,13 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (needle[j] == haystack[i])
 		{
-			for (k = 0, j = 0; j < m; j++, k++)
+			for (k = 0; j < m; j++, k++)
 			{
 				if (needle[j] != haystack[i + j])
+				{
+					j = 0;
 					break;
+				}
 				point = i;
 			}
 		}

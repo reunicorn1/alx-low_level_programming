@@ -31,5 +31,7 @@ char *_strpbrk(char *s, char *accept)
 		if (k == 1)
 			break;
 	}
+	if (k == 0)
+		return (0);
 	return (&s[i]);
 }

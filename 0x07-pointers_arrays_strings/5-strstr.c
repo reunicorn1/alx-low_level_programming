@@ -21,24 +21,29 @@ char *_strstr(char *haystack, char *needle)
 	while (needle[m] != '\0')
 		m++;
 
-	for (i = 0, j = 0; i < n; i++)
+	if (m > 0)
 	{
-		if (needle[j] == haystack[i])
+		for (i = 0, j = 0; i < n; i++)
 		{
-			for (k = 0; j < m; j++, k++)
+			if (needle[j] == haystack[i])
 			{
-				if (needle[j] != haystack[i + j])
+				for (k = 0; j < m; j++, k++)
 				{
-					j = 0;
-					break;
+					if (needle[j] != haystack[i + j])
+					{
+						j = 0;
+						break;
+					}
+					point = i;
 				}
-				point = i;
 			}
+			if (k == m)
+				break;
 		}
-		if (k == m)
-			break;
+		if (k != m)
+			return (0);
+		return (&haystack[point]);
 	}
-	if (k != m)
-		return (0);
-	return (&haystack[point]);
+	else
+		return (haystack);
 }

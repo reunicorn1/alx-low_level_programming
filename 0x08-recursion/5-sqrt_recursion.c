@@ -12,17 +12,19 @@
 
 int sqrt_guesser(int min, int n, int max)
 {
-	int guess;
+	long guess;
+	long guess_times;
 
 	guess = (min + max) / 2;
+	guess_times = guess * guess;
 	if (min > max)
 		return (-1);
-	if (guess * guess == n)
-		return (guess);
-	else if (guess * guess > n)
+	if (guess_times > n)
 		return (sqrt_guesser(min, n, (guess - 1)));
-	else
+	else if (guess_times < n)
 		return (sqrt_guesser((guess + 1), n, max));
+	else
+		return (guess);
 }
 
 /**
@@ -35,5 +37,5 @@ int sqrt_guesser(int min, int n, int max)
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt_guesser(1, n, n));
+	return (sqrt_guesser(0, n, n));
 }

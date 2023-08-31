@@ -11,5 +11,7 @@ int sqrt_guesser(int min, int n, int max);
 int _sqrt_recursion(int n);
 int odd_prime(int n, int start);
 int is_prime_number(int n);
+int palindrome(char *s1, char *s2, int steps);
+int is_palindrome(char *s);
 
 #endif

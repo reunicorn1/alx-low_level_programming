@@ -13,5 +13,6 @@ int odd_prime(int n, int start);
 int is_prime_number(int n);
 int palindrome(char *s1, char *s2, int steps);
 int is_palindrome(char *s);
+int wildcmp(char *s1, char *s2);
 
 #endif

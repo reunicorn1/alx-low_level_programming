@@ -63,4 +63,6 @@ int main(int argc __attribute__((unused)), char *argv[])
 	i = _atoi(argv[1]);
 	j = _atoi(argv[2]);
 	printf("%d\n", i * j);
+
+	return (0);
 }

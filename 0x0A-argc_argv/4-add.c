@@ -7,7 +7,7 @@
  * main - adds positive numbers.
  * @argc: the argument count
  * @argv: the argument vector
-
+ *
  * Return: Always 0.
  */
 

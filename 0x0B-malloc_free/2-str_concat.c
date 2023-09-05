@@ -33,5 +33,6 @@ char *str_concat(char *s1, char *s2)
 		ptr[i] = s1[i];
 	for (i = n, j = 0; i < n + m; i++, j++)
 		ptr[i] = s2[j];
+	free(tem);
 	return (ptr);
 }

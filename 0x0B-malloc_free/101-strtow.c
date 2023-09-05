@@ -42,7 +42,7 @@ char **strtow(char *str)
 			word++;
 	}
 	ptr = (char **)malloc(sizeof(char *) * (word + 1));
-	if (ptr == NULL)
+	if (ptr == NULL || word == 0)
 		return (NULL);
 	for (i = 0, checkpoint = 0; i < word; i++)
 	{

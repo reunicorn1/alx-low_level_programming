@@ -56,7 +56,7 @@ char **strtow(char *str)
 				break;
 			}
 		}
-		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 2));
+		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 1));
 		if (ptr[i] == NULL)
 		{
 			for (k = 0; k < i; k++)

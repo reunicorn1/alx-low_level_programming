@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 	sum = 0;
 	for (i = 0; i < ac; i++)
 		sum += strlen(av[i]);
-	ptr = (char *)malloc(sizeof(char) * (sum + ac));
+	ptr = (char *)malloc(sizeof(char) * (sum + ac + 1));
 	if (ptr == NULL)
 		return (NULL);
 	k = 0;
@@ -33,5 +33,6 @@ char *argstostr(int ac, char **av)
 		ptr[k] = '\n';
 		k++;
 	}
+	ptr[k] = '\0';
 	return (ptr);
 }

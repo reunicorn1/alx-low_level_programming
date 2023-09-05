@@ -41,10 +41,8 @@ char **strtow(char *str)
 		if (alnumnct(str[i - 1]) && (isspace(str[i]) || i == len - 1))
 			word++;
 	}
-	if (word == 0)
-		return (NULL);
 	ptr = (char **)malloc(sizeof(char *) * word + 1);
-	if (ptr == NULL)
+	if (ptr == NULL || word == 0)
 		return (NULL);
 	for (i = 0, checkpoint = 0; i < word; i++)
 	{
@@ -58,7 +56,7 @@ char **strtow(char *str)
 				break;
 			}
 		}
-		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 1));
+		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 2));
 		if (ptr[i] == NULL)
 		{
 			for (k = 0; k < i; k++)

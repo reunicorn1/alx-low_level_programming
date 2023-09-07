@@ -19,11 +19,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char tem[] = "";
 
 	/* assigning variables */
-	len = strlen(s1);
 	if (s1 == NULL)
 		s1 = tem;
 	if (s2 == NULL)
 		s2 = tem;
+	len = strlen(s1);
 	ptr = malloc(sizeof(char) * (len + n + 1));
 	if (ptr == NULL)
 	{

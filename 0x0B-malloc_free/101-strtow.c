@@ -52,6 +52,8 @@ char **strtow(char *str)
 				ltr++;
 			if ((isspace(str[j]) || j == len - 1) && alnumnct(str[j - 1]))
 			{
+				if (i - checkpoint != ltr)
+					j++;
 				checkpoint = j + 1;
 				break;
 			}
@@ -64,10 +66,8 @@ char **strtow(char *str)
 			free(ptr);
 			return (NULL);
 		}
-		l = checkpoint - 1 - ltr;
-		for (k = 0; k < ltr; k++, l++)
+		for (k = 0, l = checkpoint - 1 - ltr, ptr[i][ltr] = '\0'; k < ltr; k++, l++)
 			ptr[i][k] = str[l];
-		ptr[i][ltr] = '\0';
 	}
 	return (ptr);
 }

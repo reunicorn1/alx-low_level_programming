@@ -41,7 +41,7 @@ char **strtow(char *str)
 		if (alnumnct(str[i - 1]) && (isspace(str[i]) || i == len - 1))
 			word++;
 	}
-	ptr = (char **)malloc(sizeof(char *) * word + 1);
+	ptr = (char **)malloc(sizeof(char *) * (word + 1));
 	if (ptr == NULL || word == 0)
 		return (NULL);
 	for (i = 0, checkpoint = 0; i < word; i++)
@@ -50,7 +50,7 @@ char **strtow(char *str)
 		{
 			if (alnumnct(str[j]))
 				ltr++;
-			if ((isspace(str[j]) || j == len - 1) && alnumnct(str[j - 1]))
+			if (isspace(str[j]) && alnumnct(str[j - 1]))
 			{
 				if (i - checkpoint != ltr)
 					j++;
@@ -58,7 +58,7 @@ char **strtow(char *str)
 				break;
 			}
 		}
-		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 2));
+		ptr[i] = (char *)malloc(sizeof(char) * (ltr + 1));
 		if (ptr[i] == NULL)
 		{
 			for (k = 0; k < i; k++)
@@ -66,7 +66,8 @@ char **strtow(char *str)
 			free(ptr);
 			return (NULL);
 		}
-		for (k = 0, l = checkpoint - 1 - ltr, ptr[i][ltr] = '\0'; k < ltr; k++, l++)
+		l = j - ltr;
+		for (k = 0; k < ltr; k++, l++)
 			ptr[i][k] = str[l];
 	}
 	return (ptr);

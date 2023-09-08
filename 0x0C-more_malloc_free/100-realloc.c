@@ -17,6 +17,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;
 
+	if (new_size == 0 && ptr == NULL)
+		return (NULL);
 	if (new_size == old_size)
 		return (ptr);
 	/* allocation of new memory */
@@ -36,7 +38,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	/* freeing process */
 	if (ptr != NULL)
 		free(ptr);
-	if (new_size == 0 || (new_size == 0 && ptr == NULL))
+	if (new_size == 0)
 		return (NULL);
 	return (new_ptr);
 }

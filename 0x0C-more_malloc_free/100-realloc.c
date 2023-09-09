@@ -17,15 +17,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;
 
-	if (new_size == 0 && ptr == NULL)
-	{
-		return (NULL);
-		free(ptr);
-	}
 	if (new_size == old_size)
 		return (ptr);
 	/* allocation of new memory */
-	if (new_size > 0)
+	if (new_size > 0 || ptr == NULL)
 	{
 		new_ptr = malloc(new_size);
 		if (new_ptr == NULL)
@@ -41,7 +36,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	/* freeing process */
 	if (ptr != NULL)
 		free(ptr);
-	if (new_size == 0)
+	if (new_size == 0 && ptr != NULL)
 		return (NULL);
 	return (new_ptr);
 }

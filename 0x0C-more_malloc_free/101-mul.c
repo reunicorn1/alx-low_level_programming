@@ -16,8 +16,13 @@ void print_mul(int *ptr, int len)
 {
 	int i;
 
-	for (i = 0; i < len; i++)
-		putchar(ptr[i] + '0');
+	if (ptr[0] == 0)
+		_putchar('0');
+	else
+	{
+		for (i = 0; i < len; i++)
+			putchar(ptr[i] + '0');
+	}
 	putchar('\n');
 	free(ptr);
 }

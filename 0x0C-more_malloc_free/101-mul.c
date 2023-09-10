@@ -237,7 +237,6 @@ int main(int argc, char *argv[])
 		{
 			if (!(argv[i][j] > 47 && argv[i][j] < 58))
 			{
-				printf("not argc: %d\n", argc);
 				printf("Error\n");
 				exit(98);
 			}
@@ -246,7 +245,10 @@ int main(int argc, char *argv[])
 	num1 = argv[1];
 	num2 = argv[2];
 	answer = _mul(num1, num2);
-	printf("%s\n", answer);
+	if (answer[0] == '0')
+		printf("0\n");
+	else
+		printf("%s\n", answer);
 	free(answer);
 	return (0);
 }

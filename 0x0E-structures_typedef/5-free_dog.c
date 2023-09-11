@@ -5,7 +5,7 @@
 /**
  * free_dog - frees the dog
  * @d: the dog structure
-
+ *
  * Return: non
  */
 

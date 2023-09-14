@@ -9,7 +9,7 @@
  * Return: non
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i, j;
 	char *ptr;
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 			printf("%02hhx\n", ptr[i]);
 			break;
 		}
-		printf("%02hhx ",ptr[i]);
+		printf("%02hhx ", ptr[i]);
 	}
 	return (0);
 }

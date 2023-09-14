@@ -41,12 +41,13 @@ void print_all(const char * const format, ...)
 					printf("%s%s", sep, s);
 					break;
 				default:
-				break;
+				i++;
+				continue;
 			}
 		i++;
 		sep = ", ";
 		}
-		putchar('\n');
 	}
 	va_end(arg);
+	putchar('\n');
 }

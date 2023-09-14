@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-    print_all("cei", 'B', 2);
+    print_all("x", 'X');
     return (0);
 }

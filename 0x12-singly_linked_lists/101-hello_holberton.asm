@@ -1,19 +1,19 @@
 ; ----------------------------------------------------------------------------------------
-; This is an macOS console program that writes "Hello, Holberton on one line followed by a new line and then exits.
-; It uses printf from the C library.  To assemble and run:
+; Writes "Hello, Holberton" to the console using a C library. Runs on Linux.
 ;
-;     nasm -fmacho64 hola.asm && gcc hola.o && ./a.out
+;     nasm -felf64 hola.asm && gcc hola.o && ./a.out
 ; ----------------------------------------------------------------------------------------
+section .data
+format db "Hello Holberton", 10, 0  ; The format string for printf
 
-          global    _main
-          extern    _printf
+section .text
+global main
+extern printf
 
-          section   .text
-_main:    push      rbp                     ; Call stack must be aligned
-          lea       rdi, [rel message]      ; First argument is address of message
-          call      _printf                 ; printf(message)
-          pop       rbp                     ; Fix up stack before returning
-          ret
+main:
+    push rbp                ; Save the base pointer
+    mov rdi, format         ; Load the format string into rdi
+    call printf            ; Call printf with the format string
+    pop rbp                 ; Restore the base pointer
+    ret                     ; Return from main
 
-          section   .data
-message:  db        "Hello, Holberton", 10, 0        ; 10 is the ASCII code for newline ('\n')

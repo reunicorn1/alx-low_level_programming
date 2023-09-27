@@ -13,22 +13,21 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
 	listint_t *ptr;
-	listint_t flag = {10, NULL};
 
 	if (head)
 	{
-		while (head)
+		ptr = (listint_t *)head;
+		while (ptr)
 		{
-			if (head->next == &flag)
+			printf("[%p] %d\n", (void *)ptr, ptr->n);
+			i++;
+			if (ptr <= ptr->next)
 			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
+				ptr = ptr->next;
+				printf("-> [%p] %d\n", (void *)ptr, ptr->n);
 				break;
 			}
-			printf("[%p] %d\n", (void *)head, head->n);
-			i++;
-			ptr = (listint_t *)head;
-			head = head->next;
-			ptr->next = &flag;
+			ptr = ptr->next;
 		}
 		return (i);
 	}

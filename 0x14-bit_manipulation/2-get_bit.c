@@ -32,8 +32,8 @@ unsigned long int _pow_recursion(int x, int y)
 
 char *binary_buff(unsigned long int n)
 {
-	int i, index = 0;
-	unsigned long int pwr, num;
+	int i, j, index = 0;
+	unsigned long int num, pwr = 0;
 	char *buff;
 
 	buff = malloc(sizeof(char) * 1024);
@@ -46,25 +46,32 @@ char *binary_buff(unsigned long int n)
 		buff[index] = '\0';
 		return (buff);
 	}
-	num = n;
-	for (i = 0; _pow_recursion(2, i) <= n; i++)
-	{
-		if ( _pow_recursion(2, i + 1) > n)
-			break;
-	}
-	for (; i >= 0; i--)
+	for (i = 0; pwr < n; i++)
 	{
 		pwr = _pow_recursion(2, i);
-		if (num >= pwr)
+		if (n > _pow_recursion(2, 62))
+			i = 63;
+		if (pwr >= n || (n > _pow_recursion(2, 62)))
 		{
+			num = (pwr == n) ? (n - pwr) : (n - _pow_recursion(2, (i - 1)));
 			buff[index] = '1';
 			index++;
-			num -= pwr;
-		}
-		else
-		{
-			buff[index] = '0';
-			index++;
+			for (j = (num == 0) ? i - 1 : i - 2; j >= 0; j--)
+			{
+				pwr = _pow_recursion(2, j);
+				if (num < pwr)
+				{
+					buff[index] = '0';
+					index++;
+				}
+				if (num >= pwr)
+				{
+					num = num - pwr;
+					buff[index] = '1';
+					index++;
+				}
+			}
+			break;
 		}
 	}
 	buff[index] = '\0';

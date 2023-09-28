@@ -15,7 +15,7 @@ int main(void)
     printf("\n");
     print_binary(123456789);
     printf("\n");
-    print_binary(ULONG_MAX - 1);
+    print_binary(ULONG_MAX - 1024);
     printf("\n");
     print_binary(4294967295);
     printf("\n");

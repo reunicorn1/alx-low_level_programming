@@ -42,7 +42,9 @@ void print_binary(unsigned long int n)
 	for (i = 0; pwr < n; i++)
 	{
 		pwr = _pow_recursion(2, i);
-		if (pwr >= n)
+		if (n > _pow_recursion(2, 62))
+			i = 63;
+		if (pwr >= n || (n > _pow_recursion(2, 62)))
 		{
 			num = (pwr == n) ? (n - pwr) : (n - _pow_recursion(2, (i - 1)));
 			_putchar('1');

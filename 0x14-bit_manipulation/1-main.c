@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -10,13 +11,13 @@ int main(void)
 {
     print_binary(0);
     printf("\n");
-    print_binary(1);
+    print_binary(255);
     printf("\n");
-    print_binary(98);
+    print_binary(123456789);
     printf("\n");
-    print_binary(1024);
+    print_binary(ULONG_MAX - 1);
     printf("\n");
-    print_binary((1 << 10) + 1);
+    print_binary(4294967295);
     printf("\n");
     return (0);
 }

@@ -13,9 +13,11 @@ size_t free_safe(listint_t *h)
 {
 	size_t count = 0;
 
-	if (h && (h > h->next))
+	if (h)
 	{
-		count = 1 + free_safe(h->next);
+		count++;
+		if (h > h->next)
+			count += free_safe(h->next);
 		free(h);
 	}
 	return (count);

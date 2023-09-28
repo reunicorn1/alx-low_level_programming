@@ -41,8 +41,7 @@ char *binary_buff(unsigned long int n)
 		return (NULL);
 	if (n == 0)
 	{
-		buff[index] = '0';
-		index++;
+		buff[index] = '0', index++;
 		buff[index] = '\0';
 		return (buff);
 	}
@@ -54,21 +53,18 @@ char *binary_buff(unsigned long int n)
 		if (pwr >= n || (n > _pow_recursion(2, 62)))
 		{
 			num = (pwr == n) ? (n - pwr) : (n - _pow_recursion(2, (i - 1)));
-			buff[index] = '1';
-			index++;
+			buff[index] = '1', index++;
 			for (j = (num == 0) ? i - 1 : i - 2; j >= 0; j--)
 			{
 				pwr = _pow_recursion(2, j);
 				if (num < pwr)
 				{
-					buff[index] = '0';
-					index++;
+					buff[index] = '0', index++;
 				}
 				if (num >= pwr)
 				{
 					num = num - pwr;
-					buff[index] = '1';
-					index++;
+					buff[index] = '1', index++;
 				}
 			}
 			break;

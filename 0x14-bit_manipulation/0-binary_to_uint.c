@@ -12,7 +12,7 @@
  * Return: the answer
  */
 
-unsigned int _pow_recursion(int x, int y)
+unsigned long int _pow_recursion(int x, int y)
 {
 	unsigned int sum;
 

@@ -48,9 +48,9 @@ char *binary_buff(unsigned long int n)
 	for (i = 0; pwr < n; i++)
 	{
 		pwr = _pow_recursion(2, i);
-		if (n > _pow_recursion(2, 62))
-			i = 63;
-		if (pwr >= n || (n > _pow_recursion(2, 62)))
+		if (n > _pow_recursion(2, 63))
+			i = 64;
+		if (pwr >= n || (n > _pow_recursion(2, 63)))
 		{
 			num = (pwr == n) ? (n - pwr) : (n - _pow_recursion(2, (i - 1)));
 			buff[index] = '1', index++;
@@ -88,8 +88,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	int num;
 
 	binary = binary_buff(n);
-	if (binary == NULL || strlen(binary) < index + 1)
+	if (binary == NULL || index > 64)
 		return (-1);
+	if (index > strlen(binary) - 1 && index <= 64)
+		return (0);
 	num = (binary[(strlen(binary) - 1) - index] - '0');
 	free(binary);
 	return (num);

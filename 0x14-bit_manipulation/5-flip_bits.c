@@ -24,36 +24,6 @@ unsigned long int _pow_recursion(int x, int y)
 }
 
 /**
- * binary_to_ulong - converts a binary number to an unsigned int
- * @b: a string representing the binary number
- *
- * Return: the converted number or 0 in failure
- */
-
-unsigned long int binary_to_ulong(const char *b)
-{
-	int i, j, len;
-	unsigned long int sum = 0;
-
-	if (b)
-	{
-		for (i = 0; b[i] != '\0'; i++)
-		{
-			if (!(b[i] == '1' || b[i] == '0'))
-				return (0);
-		}
-		len = strlen(b);
-		for (i = len - 1, j = 0; i >= 0; j++, i--)
-		{
-			sum += _pow_recursion(2, i) * (b[j] - '0');
-		}
-		return (sum);
-	}
-	else
-		return (0);
-}
-
-/**
  * binary_buff - creates a buffer of binary numbers
  * @n: is the number to be converted to binary
  *
@@ -105,24 +75,26 @@ char *binary_buff(unsigned long int n)
 }
 
 /**
- * clear_bit -  sets the value of a bit to 0 at a given index
- * @n: is the number to be adjusted
- * @index: is the index starting from 0 of the bit you want to set
+ * flip_bits - returns the number of bits you would need to flip
+ * @n: the first number
+ * @m: the second number
  *
- * Return: 1 in success, -1 in failure
+ * Return: returns the number of bits you would need to flip
  */
 
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	char *bin;
+	unsigned int i, bits = 0;
+	char *buff;
 
-	bin = binary_buff(*n);
-	if (bin == NULL || index > 64)
-		return (-1);
-	if (index > strlen(bin) - 1 && index <= 64)
-		return (1);
-	bin[(strlen(bin) - 1) - index] = '0';
-	*n = binary_to_ulong(bin);
-	free(bin);
-	return (1);
+	buff = binary_buff(n ^ m);
+	if (buff == NULL)
+		return (0);
+	for (i = 0; buff[i] != '\0'; i++)
+	{
+		if (buff[i] == '1')
+			bits++;
+	}
+	free(buff);
+	return (bits);
 }

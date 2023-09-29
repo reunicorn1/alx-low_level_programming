@@ -12,5 +12,6 @@ char *bin_generator(unsigned int index);
 unsigned long int binary_to_ulong(const char *b);
 int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int get_endianness(void);
 
 #endif

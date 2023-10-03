@@ -63,8 +63,6 @@ int read_write(const char *file_from, const char *file_to)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			free(buffer);
-			close_file(fd1);
-			close_file(fd2);
 			exit(98);
 		}
 		w = write(fd2, buffer, r);
@@ -72,8 +70,6 @@ int read_write(const char *file_from, const char *file_to)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			free(buffer);
-			close_file(fd1);
-			close_file(fd2);
 			exit(99);
 		}
 		fd2 = open(file_to, O_WRONLY | O_APPEND);

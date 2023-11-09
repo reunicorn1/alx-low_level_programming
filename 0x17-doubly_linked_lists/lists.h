@@ -23,3 +23,9 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+
+void print_result(void);
+int is_palindrome(char *s);
+int palindrome(char *s1, char *s2, int steps);
+int _strlen_recursion(char *s);
+void convertIntToString(int num, char *str);

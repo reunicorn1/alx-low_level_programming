@@ -11,12 +11,17 @@
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	static  count;
+	size_t count = 0;
+	dlistint_t *temp = NULL;
 
 	if (h)
 	{
-		count++;
-		dlistint_len(h->next);
+		temp = (dlistint_t *)(h);
+		while (temp)
+		{
+			count++;
+			temp = temp->next;
+		}
 	}
 	return (count);
 }

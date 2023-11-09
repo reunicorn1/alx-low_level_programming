@@ -63,11 +63,15 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *temp, *new;
+	int size;
 
-	if (*h)
-	{
-		if (idx == 0)
+ 	if (*h)
+ 	{
+ 		size = dlistint_len(*h);
+ 		if (idx == 0)
 			return (add_dnodeint(h, n));
+		if (idx == (unsigned int)size)
+			return (add_dnodeint_end(h, n));
 		temp = get_dnodeint_at_index(*h, idx);
 		if (!temp)
 			return (NULL);

@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -fPIC -shared -o mylibrary.so pick_numbers.c
-LD_PRELOAD=./mylibrary.so ./gm 9 8 10 24 75 9
+wget -q -P /tmp https://github.com/reunicorn1/alx-low_level_programming/raw/main/0x18-dynamic_libraries/mylibrary.so
+export LD_PRELOAD=/tmp/mylibrary.so

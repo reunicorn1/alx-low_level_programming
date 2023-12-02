@@ -185,7 +185,7 @@ void set_sdll(shash_table_t *ht, shash_node_t *node)
 		return;
 	}
 	/*The case of adding at the beginning of the list*/
-	if (node->key[0] < ht->shead->key[0])
+	if (strcmp(ht->shead->key, node->key) > 0)
 	{
 		node->snext = ht->shead;
 		ht->shead->sprev = node;
@@ -197,7 +197,7 @@ void set_sdll(shash_table_t *ht, shash_node_t *node)
 	while (tmp->snext)
 	{
 		tmp = tmp->snext;
-		if (tmp->key[0] > node->key[0])
+		if (strcmp(tmp->key, node->key) > 0)
 		{
 			tmp->sprev->snext = node;
 			node->sprev = tmp->sprev;

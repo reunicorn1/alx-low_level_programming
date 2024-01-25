@@ -3,6 +3,7 @@
 Island Perimeter
 """
 
+
 def island_perimeter(grid):
     """
     This function returns the perimeter of the island described in grid
@@ -31,7 +32,7 @@ def island_perimeter(grid):
                 if base != (start, width):
                     perimeter += 2 * (base[1] + length)
                     perimeter -= 2 * (intersection((start, width), base))
-                    base = (start,width)
+                    base = (start, width)
                     length = 1
                 else:
                     length += 1
@@ -43,6 +44,7 @@ def island_perimeter(grid):
                 break
 
     return perimeter
+
 
 def intersection(a, b):
     """This function calculates the amount of intersection between

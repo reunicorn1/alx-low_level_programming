@@ -20,5 +20,6 @@ void printing(int *array, size_t lo, size_t hi);
 
 /********* Jump Search **********/
 int jump_search(int *array, size_t size, int value);
+int linear_search_j(int *array, int prev, int curr, int value, int size);
 
 #endif

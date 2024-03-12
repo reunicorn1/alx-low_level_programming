@@ -6,6 +6,9 @@
  * Note: each time the array is halved, it gets printed
  * @array: pointer to the array of integers to be sorted
  * @size: size of the array
+ * @value: the value to be searched
+ *
+ * Return: the index if th value to be searched.
  */
 
 int binary_search(int *array, size_t size, int value)
@@ -35,6 +38,8 @@ int binary_search(int *array, size_t size, int value)
  * @array: pointer to the array of integers to be sorted
  * @lo: the lowest index of the array
  * @hi: the hightest index of the array
+ *
+ * Return: Nothing.
  */
 void printing(int *array, size_t lo, size_t hi)
 {

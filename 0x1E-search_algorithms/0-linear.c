@@ -8,6 +8,8 @@
  * @array: pointer to the array of integers to be searched
  * @size: size of the array
  * @value: the value to be searched
+ *
+ * Return: the index of the value to be searched
  */
 
 int linear_search(int *array, size_t size, int value)
@@ -20,7 +22,7 @@ int linear_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		if (array[i] == value)
-			return(i);
+			return (i);
 	}
 	return (-1);
 }

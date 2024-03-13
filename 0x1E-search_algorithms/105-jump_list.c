@@ -19,8 +19,6 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	if (!list)
 		return (NULL);
-	if (curr->n == value)
-		return (curr);
 	while (curr->next)
 	{
 		prev = curr, curr = stepping(curr, block);

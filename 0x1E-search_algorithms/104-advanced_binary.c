@@ -41,8 +41,13 @@ int advanced_binary_split(int *array, size_t lo, size_t hi, int value,
 	if (lo <= hi)
 	{
 		printing(array, lo, hi);
-		if ((mid == 0 || array[mid - 1] < value) && array[mid] == value)
-			return (mid);
+		if (array[mid] == value)
+		{
+			if (array[mid - 1] < value || mid == 0)
+				return (mid);
+			else
+				return (advanced_binary_split(array, lo, mid, value, size));
+		}
 		else if (array[mid] < value && (size_t)mid < size)
 			return (advanced_binary_split(array, mid + 1, hi, value, size));
 		else

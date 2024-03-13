@@ -22,7 +22,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (curr->next)
 	{
 		prev = curr, curr = stepping(curr, block);
-		printf("Value checked array[%li] = [%d]\n", curr->index, curr->n);
+		printf("Value checked at array[%li] = [%d]\n", curr->index, curr->n);
 		if (value <= curr->n)
 			return (linear_search_list(prev, curr, value));
 	}
@@ -65,7 +65,7 @@ listint_t *linear_search_list(listint_t *prev, listint_t *curr, int value)
 			curr->index);
 	for (i = prev->index, pt = prev; i <= curr->index && pt; i++)
 	{
-		printf("Value checked array[%li] = [%d]\n", pt->index, pt->n);
+		printf("Value checked at array[%li] = [%d]\n", pt->index, pt->n);
 		if (value == pt->n)
 			return (pt);
 		pt = pt->next;

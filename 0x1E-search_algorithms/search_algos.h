@@ -31,5 +31,6 @@ int binary_search_e(int *array, size_t size, int start, int end, int value);
 
 /********* Advanced binary search **********/
 int advanced_binary(int *array, size_t size, int value);
-
+int advanced_binary_split(int *array, size_t lo, size_t hi, int value,
+		size_t size);
 #endif

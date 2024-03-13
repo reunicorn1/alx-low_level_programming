@@ -6,8 +6,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*________ Data Structures ________*/
 
-
+/**
+ * struct listint_s - singly linked list
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct listint_s
+{
+    int n;
+    size_t index;
+    struct listint_s *next;
+} listint_t;
 
 /*________ Function Prototypes ________*/
 
@@ -33,4 +48,13 @@ int binary_search_e(int *array, size_t size, int start, int end, int value);
 int advanced_binary(int *array, size_t size, int value);
 int advanced_binary_split(int *array, size_t lo, size_t hi, int value,
 		size_t size);
+
+/********* Jump search in a singly linked list **********/
+void print_list(const listint_t *list);
+void free_list(listint_t *list);
+listint_t *create_list(int *array, size_t size);
+listint_t *jump_list(listint_t *list, size_t size, int value);
+listint_t *stepping(listint_t *node, size_t step);
+listint_t *linear_search_list(listint_t *prev, listint_t *curr, int value);
+
 #endif

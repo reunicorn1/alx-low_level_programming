@@ -19,9 +19,9 @@
  */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 /**
@@ -36,10 +36,10 @@ typedef struct listint_s
  */
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
 } skiplist_t;
 
 /*________ Function Prototypes ________*/
@@ -73,7 +73,7 @@ void free_list(listint_t *list);
 listint_t *create_list(int *array, size_t size);
 listint_t *jump_list(listint_t *list, size_t size, int value);
 listint_t *stepping(listint_t *node, size_t step);
-listint_t *linear_search_list(listint_t *prev, listint_t *curr, 
+listint_t *linear_search_list(listint_t *prev, listint_t *curr,
 		int value);
 
 /********* Linear search in a skip list **********/
@@ -82,6 +82,6 @@ void init_express(skiplist_t *list, size_t size);
 skiplist_t *create_skiplist(int *array, size_t size);
 void print_skiplist(const skiplist_t *list);
 skiplist_t *linear_skip(skiplist_t *list, int value);
-skiplist_t *linear_search_skip(skiplist_t *prev, skiplist_t *curr, 
+skiplist_t *linear_search_skip(skiplist_t *prev, skiplist_t *curr,
 		int value);
 #endif
